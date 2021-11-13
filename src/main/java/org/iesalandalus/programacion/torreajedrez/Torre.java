@@ -38,5 +38,11 @@ public class Torre {
 		
 		return posicionTorre;
 	}
+	
+	public Torre() { // Constructor por defecto
+		
+		setColor(Color.NEGRO);
+		setPosicion(new Posicion (8,'h'));
+	}
 
 }
