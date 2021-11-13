@@ -38,5 +38,11 @@ public class Posicion {
 		
 		return columna;
 	}
+	
+	public Posicion(int fila, char columna) {
+		
+		setFila(fila);
+		setColumna(columna);
+	}
 
 }
