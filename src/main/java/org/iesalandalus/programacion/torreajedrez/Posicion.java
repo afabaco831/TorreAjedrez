@@ -39,10 +39,23 @@ public class Posicion {
 		return columna;
 	}
 	
-	public Posicion(int fila, char columna) {
+	public Posicion(int fila, char columna) { // Constructor parámetros
 		
 		setFila(fila);
 		setColumna(columna);
+	}
+	
+	public Posicion (Posicion posicion) { // Constructor copia
+		
+		if (posicion==null) {
+			
+			throw new NullPointerException("ERROR: No es posible copiar una posición nula.");
+			
+		} else {
+			
+			setFila(fila);
+			setColumna(columna);
+		}
 	}
 
 }
