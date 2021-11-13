@@ -59,7 +59,7 @@ public class Torre {
 		}
 	}
 	
-	public Torre(Color colorTorre, char columna) { // Constructor parametros color y columna
+	public Torre(Color colorTorre, char columna) { // Constructor inicial parametros color y columna
 		
 		if (columna=='a' || columna=='h') {
 			

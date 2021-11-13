@@ -11,7 +11,7 @@ public class Posicion {
 		
 		if (fila<1 || fila>8) {
 			
-			throw new IllegalArgumentException("EROOR: Fila no válida.");
+			throw new IllegalArgumentException("ERROR: Fila no válida.");
 			
 		} else {
 			
@@ -55,8 +55,8 @@ public class Posicion {
 			
 		} else {
 			
-			setFila(fila);
-			setColumna(columna);
+			setFila(posicion.getFila());
+			setColumna(posicion.getColumna());
 		}
 	}
 
