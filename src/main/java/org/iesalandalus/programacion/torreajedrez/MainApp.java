@@ -117,6 +117,11 @@ public class MainApp {
 		
 	}
 	
+	private static void crearTorreColor() {
+		
+		torre= new Torre(elegirColor());
+	}
+	
 	
 
 	public static void main(String[] args) {
