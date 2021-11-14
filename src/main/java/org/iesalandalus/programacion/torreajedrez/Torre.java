@@ -51,6 +51,11 @@ public class Torre {
 	
 	public Torre(Color colorTorre) { // Constructor parámetro color
 		
+		if (colorTorre==null) {
+			
+			throw new NullPointerException("ERROR: No se puede asignar un color nulo.");
+		}
+		
 		if (colorTorre.equals(Color.BLANCO)) {
 			
 			setColor(Color.BLANCO);
@@ -65,6 +70,10 @@ public class Torre {
 	
 	public Torre(Color colorTorre, char columna) { // Constructor inicial parametros color y columna
 		
+		if (colorTorre==null) {
+			throw new NullPointerException("ERROR: No se puede asignar un color nulo.");
+			
+		}
 		if (columna=='a' || columna=='h') {
 			
 			if (colorTorre.equals(Color.BLANCO)){
@@ -87,12 +96,13 @@ public class Torre {
 		
 		if (pasos<=0) {
 			
-			throw new IllegalArgumentException("ERROR: El número de pasos es positivo.");
+			throw new IllegalArgumentException("ERROR: El número de pasos debe ser positivo.");
 			
-		} else if (posicionTorre==null) {
+		} else if (direccionTorre==null) {
 			
 			throw new NullPointerException("ERROR: La dirección no puede ser nula.");
 		}
+		
 		
 		switch (direccionTorre) {
 		
@@ -106,7 +116,7 @@ public class Torre {
 					
 				} catch (IllegalArgumentException e) {
 					
-					throw new OperationNotSupportedException("ERROR: Movimiento no válido, (se sale del tablero).");
+					throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
 				}
 			} else {
 				
@@ -116,7 +126,7 @@ public class Torre {
 					
 				} catch (IllegalArgumentException e) {
 					
-					throw new OperationNotSupportedException("ERROR: Movimiento no válido, (se sale del tablero).");
+					throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
 				} 
 				
 			} break;
@@ -131,7 +141,7 @@ public class Torre {
 					
 				} catch (IllegalArgumentException e) {
 					
-					throw new OperationNotSupportedException("ERROR: Movimiento no válido, (se sale del tablero).");
+					throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
 				}
 			} else {
 				
@@ -141,7 +151,7 @@ public class Torre {
 					
 				} catch (IllegalArgumentException e) {
 					
-					throw new OperationNotSupportedException("ERROR: Movimiento no válido, (se sale del tablero).");
+					throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
 				}
 			} break;
 			
@@ -155,7 +165,7 @@ public class Torre {
 					
 				} catch (IllegalArgumentException e) {
 					
-					throw new OperationNotSupportedException("ERROR: Movimiento no válido, (se sale del tablero).");
+					throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
 				}
 				
 			} else {
@@ -165,7 +175,7 @@ public class Torre {
 					
 				} catch (IllegalArgumentException e) {
 					
-					throw new OperationNotSupportedException("ERROR: Movimiento no válido, (se sale del tablero).");
+					throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
 				}
 			} break;
 			
@@ -188,7 +198,7 @@ public class Torre {
 					setPosicion(new Posicion(posicionTorre.getFila(), (char)(posicionTorre.getColumna()+pasos)));
 				} catch (IllegalArgumentException e) {
 					
-					throw new OperationNotSupportedException("ERROR: Movimiento no válido, (se sale del tablero).");
+					throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
 				}
 			} break;
 			
