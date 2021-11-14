@@ -66,7 +66,7 @@ public class MainApp {
 		return columnaInicial;
 	}
 	
-	public static void mostrarMenuDirecciones() {
+	private static void mostrarMenuDirecciones() {
 		
 		System.out.println("MENÚ DE DIRECCIONES:");
 		System.out.println("1. ARRIBA");
@@ -76,6 +76,42 @@ public class MainApp {
 		System.out.println("5. ENROQUE CORTO");
 		System.out.println("6. ENROQUE LARGO");
 	}
+	
+	private static Direccion elegirDireccion() {
+		
+		Direccion direccion=null;
+		int opcionDireccion;
+		
+		do { 
+			System.out.println("Elija una dirección para mover la torre (1-6):");
+			opcionDireccion=Entrada.entero();
+		} while (opcionDireccion<1 || opcionDireccion>6);
+		
+		switch (opcionDireccion) {
+		
+		case 1:
+			direccion=Direccion.ARRIBA;
+			break;
+		case 2:
+			direccion=Direccion.ABAJO;
+			break;
+		case 3:
+			direccion=Direccion.IZQUIERDA;
+			break;
+		case 4:
+			direccion=Direccion.DERECHA;
+			break;
+		case 5:
+			direccion=Direccion.ENROQUE_CORTO;
+			break;
+		case 6: 
+			direccion=Direccion.ENROQUE_LARGO;
+		}
+		
+		return direccion;
+	}
+	
+	
 
 	public static void main(String[] args) {
 		System.out.println("kk");
