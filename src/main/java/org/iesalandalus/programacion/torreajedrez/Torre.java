@@ -188,9 +188,14 @@ public class Torre {
 					
 					throw new OperationNotSupportedException("ERROR: Movimiento no válido, (se sale del tablero).");
 				}
-			}
+			} break;
 			
-		}
+		default:
+			
+			throw new NullPointerException("ERROR: La dirección no puede ser nula.");
+		}  
+			
+			
 	}
 
 }
