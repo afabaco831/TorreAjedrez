@@ -122,6 +122,11 @@ public class MainApp {
 		torre= new Torre(elegirColor());
 	}
 	
+	private static void crearTorreColorColumna() {
+		
+		torre= new Torre(elegirColor(), elegirColumna());
+	}
+	
 	
 
 	public static void main(String[] args) {
