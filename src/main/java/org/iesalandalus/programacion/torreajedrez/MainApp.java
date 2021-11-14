@@ -159,6 +159,32 @@ public class MainApp {
 		}
 	}
 	
+	private static void ejecutarOpcion(int opcion) {
+		
+		switch (opcion) {
+		
+		case 1:
+			crearTorreDefecto();
+			break;
+			
+		case 2:
+			crearTorreColor();
+			break;
+			
+		case 3:
+			crearTorreColorColumna();
+			break;
+			
+		case 4:
+			mover();
+			break;
+			
+		case 5:
+			System.out.println("Adiós.");
+		}
+		
+	}
+	
 	
 
 	public static void main(String[] args) {
