@@ -134,32 +134,36 @@ public class MainApp {
 		int pasos;
 		Direccion direccion=null;
 		 
-		
-		mostrarMenuDirecciones();
-		direccion=elegirDireccion();
-		
-		if (direccion.equals(Direccion.ENROQUE_CORTO) || direccion.equals(Direccion.ENROQUE_LARGO)) {
+		if (torre==null) {
 			
-			try {
-				torre.enrocar(direccion);
-				
-			} catch (OperationNotSupportedException e) {
-				
-				System.out.println(e.getMessage());
-			}
+			System.out.println("Antes de mover la torre, debe crear una.");
 		} else {
+			mostrarMenuDirecciones();
+			direccion=elegirDireccion();
 			
-			System.out.println("Introduzca el número de pasos para mover la torre:");
-			pasos=Entrada.entero();
-			
-			try {
+			if (direccion.equals(Direccion.ENROQUE_CORTO) || direccion.equals(Direccion.ENROQUE_LARGO)) {
 				
-				torre.mover(direccion, pasos);
+				try {
+					torre.enrocar(direccion);
+					
+				} catch (OperationNotSupportedException e) {
+					
+					System.out.println(e.getMessage());
+				}
+			} else {
 				
-			} catch (OperationNotSupportedException e) {
+				System.out.println("Introduzca el número de pasos para mover la torre:");
+				pasos=Entrada.entero();
 				
-				System.out.println(e.getMessage());
-			}
+				try {
+					
+					torre.mover(direccion, pasos);
+					
+				} catch (OperationNotSupportedException e) {
+					
+					System.out.println(e.getMessage());
+				}
+			}	
 		}
 	}
 	
