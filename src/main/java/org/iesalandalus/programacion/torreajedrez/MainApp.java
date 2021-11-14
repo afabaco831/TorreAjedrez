@@ -111,6 +111,12 @@ public class MainApp {
 		return direccion;
 	}
 	
+	private static void crearTorreDefecto() {
+		
+		torre= new Torre();
+		
+	}
+	
 	
 
 	public static void main(String[] args) {
