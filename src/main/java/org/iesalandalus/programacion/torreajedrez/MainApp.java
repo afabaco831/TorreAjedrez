@@ -33,6 +33,26 @@ public class MainApp {
 		
 		return opcion;
 	}
+	
+	private static Color elegirColor() {
+		
+		Color opcionColor=null;
+		char respuesta;
+		
+		do {
+			System.out.println("Elija un color: blancas o negras (b/n):");
+			respuesta=Entrada.caracter();
+			
+		} while (respuesta!='b' || respuesta!='n');
+		
+		if (respuesta=='b') {
+			opcionColor=Color.BLANCO;
+		} else if (respuesta=='n') {
+			opcionColor=Color.NEGRO;
+		}
+		
+		return opcionColor;
+	}
 
 	public static void main(String[] args) {
 		System.out.println("kk");
