@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.torreajedrez;
 
+import org.iesalandalus.programacion.utilidades.Entrada;
+
 public class MainApp {
 	
 	private static Torre torre;
@@ -18,6 +20,18 @@ public class MainApp {
 		System.out.println("4. Mover la torre.");
 		System.out.println("5. Salir.");
 		
+	}
+	
+	private static int elegirOpcion() {
+		
+		int opcion;
+		
+		do {
+			System.out.println("Elija una opción (1-5):");
+			opcion=Entrada.entero();
+		} while (opcion<1 || opcion>5);
+		
+		return opcion;
 	}
 
 	public static void main(String[] args) {
