@@ -197,5 +197,66 @@ public class Torre {
 			
 			
 	}
+	
+	public void enrocar(Direccion direccionTorre) throws OperationNotSupportedException {
+		
+		if (direccionTorre==null) {
+			
+			throw new NullPointerException("ERROR: La dirección no puede ser nula.");
+			
+		} else {
+			
+			switch (direccionTorre) {
+			
+			case ENROQUE_CORTO: 
+				
+				if (colorTorre.equals(Color.BLANCO)){
+					
+					if (posicionTorre.getFila()==1 && posicionTorre.getColumna()=='h') {
+						
+						setPosicion(new Posicion (1,'f'));
+						setColor(Color.BLANCO);
+					} else {
+						throw new OperationNotSupportedException("ERROR: Movimiento de enroque no válido.");
+					}
+					
+				} else {
+					
+					if (posicionTorre.getFila()==8 && posicionTorre.getColumna()=='h'){
+						
+						setPosicion(new Posicion(8,'d'));
+						setColor(Color.NEGRO);
+					} else {
+						
+						throw new OperationNotSupportedException("ERROR: Movimiento de enroque no válido.");
+					}
+				} break;
+				
+			case ENROQUE_LARGO:
+				
+				if (colorTorre.equals(Color.BLANCO)) {
+					
+					if (posicionTorre.getFila()==1 && posicionTorre.getColumna()=='a') {
+						
+						setPosicion(new Posicion(1,'d'));
+						setColor(Color.BLANCO);
+					} else {
+						
+						throw new OperationNotSupportedException("ERROR: Movimiento de enroque no válido.");
+					}
+				} else {
+					
+					if (posicionTorre.getFila()==8 && posicionTorre.getColumna()=='a') {
+						
+						setPosicion(new Posicion(8,'d'));
+						setColor(Color.NEGRO);
+					} else {
+						
+						throw new OperationNotSupportedException("ERROR: Movimiento de enroque no válido.");
+					}
+				} break;
+			} 
+		}
+	}
 
 }
