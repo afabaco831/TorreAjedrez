@@ -45,7 +45,7 @@ public class MainApp {
 			System.out.println("Elija un color: blancas o negras (b/n):");
 			respuesta=Entrada.caracter();
 			
-		} while (respuesta!='b' || respuesta!='n');
+		} while (respuesta!='b' && respuesta!='n');
 		
 		if (respuesta=='b') {
 			opcionColor=Color.BLANCO;
@@ -63,7 +63,7 @@ public class MainApp {
 		do {
 			System.out.println("Elija una columna inicial ('a'/'h')");
 			columnaInicial=Entrada.caracter();
-		} while (columnaInicial != 'a' || columnaInicial!='h');
+		} while (columnaInicial != 'a' && columnaInicial!='h');
 		
 		return columnaInicial;
 	}
@@ -87,7 +87,7 @@ public class MainApp {
 		do { 
 			System.out.println("Elija una dirección para mover la torre (1-6):");
 			opcionDireccion=Entrada.entero();
-		} while (opcionDireccion<1 || opcionDireccion>6);
+		} while (opcionDireccion<1 && opcionDireccion>6);
 		
 		switch (opcionDireccion) {
 		
@@ -131,7 +131,7 @@ public class MainApp {
 	
 	private static void mover() {
 		
-		int pasos=0;
+		int pasos;
 		Direccion direccion=null;
 		 
 		
@@ -149,9 +149,13 @@ public class MainApp {
 			}
 		} else {
 			
+			System.out.println("Introduzca el número de pasos para mover la torre:");
+			pasos=Entrada.entero();
+			
 			try {
 				
 				torre.mover(direccion, pasos);
+				
 			} catch (OperationNotSupportedException e) {
 				
 				System.out.println(e.getMessage());
@@ -188,7 +192,17 @@ public class MainApp {
 	
 
 	public static void main(String[] args) {
-		System.out.println("kk");
+		
+		int respuesta;
+		
+		do {
+			
+			mostrarMenu();
+			respuesta=elegirOpcion();
+			ejecutarOpcion(respuesta);
+			mostrarTorre();
+				
+		} while (respuesta!=5);
 	}
 
 }
