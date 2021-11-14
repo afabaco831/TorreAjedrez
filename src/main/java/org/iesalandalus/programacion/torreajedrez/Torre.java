@@ -278,4 +278,9 @@ public class Torre {
 		return colorTorre == other.colorTorre && Objects.equals(posicionTorre, other.posicionTorre);
 	}
 
+	@Override
+	public String toString() {
+		return posicionTorre +"," + " color=" +colorTorre;
+	}
+
 }
