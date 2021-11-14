@@ -53,6 +53,18 @@ public class MainApp {
 		
 		return opcionColor;
 	}
+	
+	private static char elegirColumna() {
+		
+		char columnaInicial;
+		
+		do {
+			System.out.println("Elija una columna inicial ('a'/'h')");
+			columnaInicial=Entrada.caracter();
+		} while (columnaInicial != 'a' || columnaInicial!='h');
+		
+		return columnaInicial;
+	} 
 
 	public static void main(String[] args) {
 		System.out.println("kk");
