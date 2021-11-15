@@ -9,8 +9,11 @@ public class MainApp {
 	private static Torre torre;
 	
 	private static void mostrarTorre() {
-		
-		System.out.println(torre.toString());
+		try {
+			System.out.println(torre.toString());
+		}catch (NullPointerException e) {
+			System.out.println("ERROR: No se creó ninguna torre.");
+		}
 	}
 	
 	private static void mostrarMenu() {
@@ -137,6 +140,8 @@ public class MainApp {
 		if (torre==null) {
 			
 			System.out.println("Antes de mover la torre, debe crear una.");
+			
+			
 		} else {
 			mostrarMenuDirecciones();
 			direccion=elegirDireccion();
@@ -169,9 +174,11 @@ public class MainApp {
 	
 	private static void ejecutarOpcion(int opcion) {
 		
+		
 		switch (opcion) {
 		
 		case 1:
+			
 			crearTorreDefecto();
 			break;
 			
@@ -197,16 +204,16 @@ public class MainApp {
 
 	public static void main(String[] args) {
 		
-		int respuesta;
+		int opcion;
 		
 		do {
 			
 			mostrarMenu();
-			respuesta=elegirOpcion();
-			ejecutarOpcion(respuesta);
+			opcion=elegirOpcion();
+			ejecutarOpcion(opcion);
 			mostrarTorre();
 				
-		} while (respuesta!=5);
+		} while (opcion!=5);
 	}
 
 }
