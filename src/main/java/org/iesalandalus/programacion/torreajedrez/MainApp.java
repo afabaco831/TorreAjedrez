@@ -124,12 +124,26 @@ public class MainApp {
 	
 	private static void crearTorreColor() {
 		
-		torre= new Torre(elegirColor());
+		try {
+			
+			torre= new Torre(elegirColor());
+			
+		} catch (NullPointerException e) {
+			
+			System.out.println(e.getMessage());
+		}
 	}
 	
 	private static void crearTorreColorColumna() {
 		
-		torre= new Torre(elegirColor(), elegirColumna());
+		try {
+			
+			torre= new Torre(elegirColor(), elegirColumna());
+			
+		} catch (NullPointerException | IllegalArgumentException e) {
+			
+			System.out.println(e.getMessage());
+		}
 	}
 	
 	private static void mover() {
